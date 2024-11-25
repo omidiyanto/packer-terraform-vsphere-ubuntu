@@ -1,0 +1,66 @@
+##################################################################################
+# CREDENTIALS
+##################################################################################
+
+vcenter_username            = "administrator@vsphere.home"
+vcenter_password            = "PASSWORD"
+
+##################################################################################
+# VSPHERE CONFIGURATION
+##################################################################################
+
+vcenter_insecure_connection = true
+vcenter_server              = "192.168.x.x"
+vcenter_datacenter          = "Datacenter"
+vcenter_host                = "192.168.x.y"
+vcenter_datastore           = "Local-1"
+vcenter_network             = "VM Network"
+vcenter_folder              = "Templates"
+
+##################################################################################
+# HTTP SETTINGS
+##################################################################################
+
+http_directory              = "http"
+
+##################################################################################
+# VIRTUAL MACHINE SETTINGS
+##################################################################################
+
+vm_name                     = "Ubuntu-2204-Template"
+vm_guest_os_type            = "ubuntu64Guest"
+vm_version                  = 20
+vm_firmware                 = "bios"
+vm_cdrom_type               = "sata"
+vm_cpu_sockets              = 1
+vm_cpu_cores                = 1
+vm_mem_size                 = 1024
+vm_disk_size                = 102400
+thin_provision              = true
+disk_eagerly_scrub          = false
+vm_disk_controller_type     = ["pvscsi"]
+vm_network_card             = "vmxnet3"
+vm_boot_wait                = "5s"
+ssh_username                = "ubuntu"
+ssh_password                = "ubuntu"
+
+##################################################################################
+# ISO OBJECTS
+##################################################################################
+
+iso_file                    = "ubuntu-22.04.5-live-server-amd64.iso"
+iso_checksum                = "10f19c5b2b8d6db711582e0e27f5116296c34fe4b313ba45f9b201a5007056cb"
+iso_checksum_type           = "sha256"
+iso_url                     = "https://releases.ubuntu.com/jammy/ubuntu-22.04.5-live-server-amd64.iso"
+
+##################################################################################
+# ISO PATH
+##################################################################################
+
+iso_path                    = "/ISO/ubuntu-22.04.5-live-server-amd64.iso"
+
+##################################################################################
+# SCRIPTS
+##################################################################################
+
+shell_scripts               = ["./scripts/install-docker.sh"]
