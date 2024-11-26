@@ -46,8 +46,8 @@
 ## Steps to Build
 1. Clone this repository and open the project folder
     ```bash
-    git clone https://github.com/omidiyanto/packer-vsphere-vm-template.git
-    cd packer-vsphere-vm-template
+    git clone https://github.com/omidiyanto/packer-vsphere-ubuntu.git
+    cd packer-vsphere-ubuntu
     ```
 2. Fill required variables.auto.pkrvars.hcl value following provided example
     ```bash
