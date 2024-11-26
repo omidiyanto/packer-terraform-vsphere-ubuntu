@@ -1,9 +1,29 @@
-# Build VM Template on VMware vSphere using Packer
-## Pre-defined configurations
+# Automatically Build Ubuntu VM Template on VMware vSphere using Packer 🚀
+<div align="center">
+    <img src="https://img.shields.io/badge/packer-blue?style=for-the-badge&logo=packer&logoColor=white">
+    <img src="https://img.shields.io/badge/vmware-green?style=for-the-badge&logo=vmware&logoColor=black">
+    <img src="https://img.shields.io/badge/ubuntu-red?style=for-the-badge&logo=ubuntu&logoColor=white">
+</div>
+
+## Project Overview 📦
+
+Creating Virtual Machines (VMs) is a common task in IT environments, but installing and configuring them one by one can be tedious and time-consuming, right? 😩 Imagine having to install a fresh OS, set up cloud-init, configure user permissions, and tweak network settings over and over again. It's not just inefficient, it’s also prone to human error. This is where **Packer** and **VMware vSphere** come to the rescue! 🛠️
+
+In this project, we're automating the creation of an **Ubuntu VM Template** using **HashiCorp Packer**. By leveraging Packer, we can define an **immutable VM Template** that can be deployed quickly, consistently, and reliably. This VM template is perfect for spinning up new VMs on VMware vSphere, saving time and ensuring that every VM is identical from the start! 🔄💻
+
+Once this VM template is built, you'll be able to:
+- **Easily replicate the VM configuration** whenever needed.
+- **Automate the VM creation process** using **Terraform**.
+- **Ensure consistency** in VM deployment across your environments.
+
+Let’s dive into the details of how to get started with this awesome automation tool! 🎉
+
+## Pre-defined configurations 📂
 - cloud-init username: "<b>ubuntu</b>"
 - cloud-init password: "<b>ubuntu</b>"
 - default ubuntu version: "jammy / 22.04"
-## Pre-requisites
+
+## Pre-requisites  🛠️
 - Prepare Ubuntu ISO image, you can download/choose from this site:
     ```
     https://releases.ubuntu.com/
@@ -43,7 +63,7 @@
     ```
     iso_url                     = "https://releases.ubuntu.com/jammy/ubuntu-22.04.5-live-server-amd64.iso"
     ```
-## Steps to Build
+## Step-by-Step Guide 📝
 1. Clone this repository and open the project folder
     ```bash
     git clone https://github.com/omidiyanto/packer-vsphere-ubuntu.git
@@ -80,22 +100,23 @@
     packer build -force -var-file variables.auto.pkrvars.hcl ubuntu.pkr.hcl
     ```
 
-7. DONE
+7. DONE, here is the result:
+    <img src="https://github.com/user-attachments/assets/f24a068a-5573-43c0-bb3f-67ebe6c2ac11"></img>
 
-## What's Next?
-After automatically create an VM Template using Packer on VMware vShpere, you can create an VM using the template via:
-- Manual way : create VM by manually creating clone from created VM Template
-- Automatic way : using Terraform as IaC tools
+## What's Next? 🚀
+After building the VM Template, you can:
+1. **Manually Create VMs**: You can create VMs by simply cloning the VM Template in VMware vSphere.
+2. **Automate VM Creation with Terraform**: Use **Terraform** to automatically create and manage VMs from the template as part of an **Infrastructure as Code** (IaC) setup.
 
 
-## Troubleshoot !!
-If you get this problem:
+## Troubleshooting ⚠️
+If you encounter this error:
 ```
 could not find a supported CD ISO creation command (the supported commands are: xorriso, mkisofs, hdiutil, oscdimg)
 ```
 
-Solve it this way:
-1. Linux user --> just install one of CD ISO creation command given on the list
+Here's how to resolve it:
+1. Linux user --> Simply install one of the supported tools:
 2. Windows user:
     - Download ADK setup from this link: "https://github.com/omidiyanto/packer-vsphere-ubuntu/releases/download/adksetup/adksetup.exe"
     - Open the adksetup.exe, unchecked all components except <b>Deployment Tools</b>, which will install <b>oscdimg</b>
@@ -103,3 +124,8 @@ Solve it this way:
       ```
       C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\amd64\Oscdimg
       ```
+
+## Conclusion 🎯
+By following this guide, you'll be able to efficiently automate the creation of Ubuntu VM Templates on VMware vSphere using Packer. This not only saves you time but ensures that every VM is deployed with the same configuration, making management much easier. Whether you need to spin up one VM or thousands, this template makes it a breeze! 🌟
+
+Happy automating! 😄
