@@ -85,4 +85,21 @@
 ## What's Next?
 After automatically create an VM Template using Packer on VMware vShpere, you can create an VM using the template via:
 - Manual way : create VM by manually creating clone from created VM Template
-- Automatic way : using Terraform as IaC
+- Automatic way : using Terraform as IaC tools
+
+
+## Troubleshoot !!
+If you get this problem:
+```
+could not find a supported CD ISO creation command (the supported commands are: xorriso, mkisofs, hdiutil, oscdimg)
+```
+
+Solve it this way:
+1. Linux user --> just install one of CD ISO creation command given on the list
+2. Windows user:
+    - Download ADK setup from this link: "https://github.com/omidiyanto/packer-vsphere-ubuntu/releases/download/adksetup/adksetup.exe"
+    - Open the adksetup.exe, unchecked all components except <b>Deployment Tools</b>, which will install <b>oscdimg</b>
+    - Add this path to System Environment Variables
+      ```
+      C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\amd64\Oscdimg
+      ```
