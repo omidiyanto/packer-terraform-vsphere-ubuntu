@@ -1,35 +1,35 @@
 #cloud-config
 autoinstall:
-    version: 1
-    # early-commands:
-    #   # Stop ssh for packer
-    #   - sudo systemctl stop ssh
-    locale: en_US
-    identity:
-        hostname: ubuntu-server
-        username: ubuntu
-        password: 'ubuntu'
-    ssh:
-        install-server: yes
-        allow-pw: yes
-        # authorized-key: ssh-rsa ...
-    storage:
-        layout:
-            name: direct
-    apt:
-        geoip: true
-        primary:
-          - arches: [ i386, amd64 ]
-            uri: "http://archive.ubuntu.com/ubuntu"
-    packages:
-      - openssh-server
-      - open-vm-tools
-      - open-vm-tools-salt-minion
-      - cloud-init
-    user-data:
-        disable_root: false
-    late-commands:
-      - sed -i -e 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /target/etc/ssh/sshd_config
-      - sed -i -e 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /target/etc/ssh/sshd_config
-      - echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' > /target/etc/sudoers.d/ubuntu
-      - curtin in-target --target=/target -- chmod 440 /etc/sudoers.d/ubuntu
+  version: 1
+  early-commands:
+  # Stop ssh for packer
+  - sudo systemctl stop ssh
+  locale: en_US
+  identity:
+    hostname: ubuntu-server
+    username: ubuntu
+    password: 'ubuntu'
+  ssh:
+    install-server: yes
+    allow-pw: yes
+    # authorized-key: ssh-rsa ...
+  storage:
+    layout:
+      name: direct
+  apt:
+    geoip: true
+    primary:
+    - arches: [ i386, amd64 ]
+      uri: "http://archive.ubuntu.com/ubuntu"
+  packages:
+  - openssh-server
+  - open-vm-tools
+  - open-vm-tools-salt-minion
+  - cloud-init
+  user-data:
+    disable_root: false
+  late-commands:
+  - sed -i -e 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /target/etc/ssh/sshd_config
+  - sed -i -e 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /target/etc/ssh/sshd_config
+  - echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' > /target/etc/sudoers.d/ubuntu
+  - curtin in-target --target=/target -- chmod 440 /etc/sudoers.d/ubuntu
