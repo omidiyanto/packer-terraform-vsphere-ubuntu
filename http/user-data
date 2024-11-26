@@ -8,11 +8,10 @@ autoinstall:
   identity:
     hostname: ubuntu-server
     username: ubuntu
-    password: 'ubuntu'
+    password: '$6$rounds=4096$cHT.WghUs$dFgvPXx5l4y634cSTq/ah4YxUt8S.GFD/s0L.ssJtqA53a19RQ0THEwqF54jOYSrjHg/qap8PI0EnAF9P3uNE.'
   ssh:
     install-server: yes
     allow-pw: yes
-    # authorized-key: ssh-rsa ...
   storage:
     layout:
       name: direct

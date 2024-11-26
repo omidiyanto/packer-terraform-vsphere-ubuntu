@@ -57,10 +57,10 @@ iso_url                     = "https://releases.ubuntu.com/jammy/ubuntu-22.04.5-
 # ISO PATH
 ##################################################################################
 
-iso_path                    = "/ISO/ubuntu-22.04.5-live-server-amd64.iso"
+iso_path                    = "ISO"
 
 ##################################################################################
 # SCRIPTS
 ##################################################################################
 
-shell_scripts               = ["./scripts/install-docker.sh"]
+shell_scripts               = ["./scripts/init-setup.sh"]
