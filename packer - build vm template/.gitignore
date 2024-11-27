@@ -1,0 +1,3 @@
+packer_cache/
+variables.pkrvars.hcl
+variables.auto.pkrvars.hcl
