@@ -1,4 +1,4 @@
-# Automatically Build Ubuntu VM Template on VMware vSphere using Packer 🚀
+# Automatically Build Ubuntu VM on VMware vSphere using Packer and Terraform
 <div align="center">
     <img src="https://img.shields.io/badge/packer-blue?style=for-the-badge&logo=packer&logoColor=white">
     <img src="https://img.shields.io/badge/terraform-purple?style=for-the-badge&logo=terraform&logoColor=white">
@@ -7,7 +7,7 @@
 </div>
 
 ## Project Overview 📦
-
+<img src="https://github.com/user-attachments/assets/f1491817-3d6f-4c22-99db-03994f91fca1"></img><br>
 Creating Virtual Machines (VMs) is a common task in IT environments, but installing and configuring them one by one can be tedious and time-consuming, right? 😩 Imagine having to install a fresh OS, set up cloud-init, configure user permissions, and tweak network settings over and over again. It's not just inefficient, it’s also prone to human error. This is where **Packer** and **Terraform** come to the rescue! 🛠️
 
 In this project, we're automating the provisioning of multiples **Ubuntu VM** using **HashiCorp Packer** and **HashiCorp Terraform**. By leveraging Packer, we can define an **immutable VM Template** that can be deployed with **Terraform** quickly, consistently, and reliably. This VM template is perfect for spinning up new VMs on **VMware vSphere**, saving time and ensuring that every VM is identical from the start! 🔄💻
