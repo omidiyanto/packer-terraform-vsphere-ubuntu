@@ -1,8 +1,0 @@
-"packer - build vm template"/packer_cache
-"packer - build vm template"/variables.pkrvars.hcl
-"packer - build vm template"/variables.auto.pkrvars.hcl
-
-"terraform - provisioning vm"/.terraform
-"terraform - provisioning vm"/.terraform.lock.hcl
-"terraform - provisioning vm"/terraform.tfstate
-"terraform - provisioning vm"/terraform.tfstate.backup
