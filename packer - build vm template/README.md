@@ -82,7 +82,7 @@
     packer build -force -var-file variables.auto.pkrvars.hcl ubuntu.pkr.hcl
     ```
 
-7. DONE, here is the result:
+7. DONE, here is the result:<br>
     <img src="https://github.com/user-attachments/assets/f24a068a-5573-43c0-bb3f-67ebe6c2ac11"></img>
 
 ## What's Next? 
