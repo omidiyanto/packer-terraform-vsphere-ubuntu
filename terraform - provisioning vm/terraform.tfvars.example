@@ -31,8 +31,7 @@ vms = {
     # ubuntu_vm_2 = {
     #     name = "ubuntu-2"
     #     vm_vcpu = "1"
-    #     vm_memory = "1"
+    #     vm_memory = "1024"
     #     vm_disk_size = "100"
-    #     vm_ip = "192.168.217.11"
     # }
 }
