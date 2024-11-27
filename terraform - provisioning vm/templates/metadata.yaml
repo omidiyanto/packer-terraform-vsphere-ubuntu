@@ -1,0 +1,14 @@
+#cloud-config
+local-hostname: ${name}
+instance-id: ${name}
+# network:
+#   version: 2
+#   ethernets:
+#     ens192:
+#       dhcp4: true
+# growpart:
+#   mode: auto
+#   devices: ['/dev/sda2']
+#   ignore_growroot_disabled: true
+# wait-on-network:
+#   ipv4: true
