@@ -6,6 +6,7 @@ users:
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     groups: sudo
     shell: /bin/bash
-
+runcmd:
+  - echo "127.0.0.1 ${name}" >> /etc/hosts
 # packages:
 #   - tree
